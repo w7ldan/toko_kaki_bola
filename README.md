@@ -11,4 +11,18 @@ https://wildan-anshari-toko-kaki-bola.pbp.cs.ui.ac.id/
    - Mengkonfigurasi routing agar URL dipetakan ke aplikasi main yang telah saya buat
    - Push ke PWS
 
-2. ![Alt text](photo/zzz.png)
+2. 
+    ![Alt text](photo/zzz.png)
+
+3. Adalah file konfigurasi utama, untuk mengkonfigurasi pengaturan penting seperti Database, Aplikasi yang terdapat pada proyek django, Templates, Middleware, dll.
+
+4. Apabila terdapat perubahan pada models.py, Django akan membuat file migrasi yang berisi instruksi SQL, lalu mengeksekusi file migrasi tersebut ke database sehingga perubahan yang dibuat dapat terbentuk.
+
+5. - Dokumentasi Lengkap & Komunitas Besar
+    Django memiliki dokumentasi yang lengkap dan komunitasnya pun cukup besar sehingga gampang untuk mempelajarinya
+   - Keamanan Tinggi
+    Aman dari vulnerability umum seperti SQL Injection, XSS, CSRF
+   - Konsep MVC
+    Arsitektur terstruktur dengan jelas, sehingga memudahkan pemahaman
+
+6. Tidak ada sih...     
