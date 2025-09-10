@@ -14,6 +14,13 @@ https://wildan-anshari-toko-kaki-bola.pbp.cs.ui.ac.id/
 2. 
     ![Alt text](photo/zzz.png)
 
+    - Client mengirimkan request ke website (Lewat browser ataupun POSTMAN)
+    - urls.py lalu mencocokkan request dan mengarahkan ke fungsi yang sesuai di views.py
+    - views.py lalu memproses logika aplikasi yang telah dibuat, lalu memanggil models.py
+    - models.py sebagai jembatan ke Database, mengakses Database lalu mengembalikan data ke views
+    - views.py lalu merender HTML template dan data dari models.py
+    - Template tersebut lalu dikembalikan ke Client sebagai HTTP Request. Apabila di browser di tampilkan dalam bentuk halaman web
+
 3. Adalah file konfigurasi utama, untuk mengkonfigurasi pengaturan penting seperti Database, Aplikasi yang terdapat pada proyek django, Templates, Middleware, dll.
 
 4. Apabila terdapat perubahan pada models.py, Django akan membuat file migrasi yang berisi instruksi SQL, lalu mengeksekusi file migrasi tersebut ke database sehingga perubahan yang dibuat dapat terbentuk.
