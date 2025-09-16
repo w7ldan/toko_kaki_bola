@@ -17,6 +17,10 @@ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-b
 
 5. - Pertama saya buat form baru untuk menerima data apabila ada produk baru yang akan ditambahkan. Selanjutnya saya membuat 4 fungsi baru, 2 diantaranya yaitu untuk menambah produk dan menunjukkan produk yang ada, dan 2 lagi untuk show json dan xml dari produk. Kemudian saya membuat 2 html untuk kedua fungsi menambah produk dan menunjukkan produk yang ada. Lalu saya membuat 2 path baru untuk kedua fungsi tersebut agar di buka di halaman yang berbeda dan menghubungkan dengan html.
 
+![Alt text](photo/contoh_json.png)
+
+![Alt text](photo/contoh_xml.png)
+
 Tugas 2:
 1. - Pertama, terlebih dulu saya membuat direktori, mengaktifkan virtual environment lalu menginstall semua dependencies.
    - Membuat proyek django baru sesuai dengan nama proyek saya.
