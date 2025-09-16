@@ -13,8 +13,6 @@ Alasan JSON lebih populer :
 
 4. Untuk mencegah dari serangan Cross-Site Request Forgery, jika kita tidak menambahkan csrf-token maka oknum dapat dengan mudah memanfaatkan session cookies untuk login dari situs lain. Karena tidak adanya sebuah verifikasi pencocokkan token, maka oknum dapat login dengan gampang dan melakukan apa saja.
 
-Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
-
 5. - Pertama saya buat form baru untuk menerima data apabila ada produk baru yang akan ditambahkan. Selanjutnya saya membuat 4 fungsi baru, 2 diantaranya yaitu untuk menambah produk dan menunjukkan produk yang ada, dan 2 lagi untuk show json dan xml dari produk. Kemudian saya membuat 2 html untuk kedua fungsi menambah produk dan menunjukkan produk yang ada. Lalu saya membuat 2 path baru untuk kedua fungsi tersebut agar di buka di halaman yang berbeda dan menghubungkan dengan html.
 
 ![Alt text](photo/contoh_json.png)
