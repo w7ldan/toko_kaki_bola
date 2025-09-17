@@ -24,7 +24,7 @@ def show_main(request):
         'npm': '2406396590',
         'name': request.user.username,
         'class': 'PBP B',
-        'product_list': product_list,
+        'news_list': product_list,
         'last_login': request.COOKIES.get('last_login', 'Never')
     }
     return render(request, "main.html",context)
