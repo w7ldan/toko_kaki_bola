@@ -36,6 +36,9 @@
 <div>
   <h2><a href="{% url 'main:show_product' product.name %}">{{ product.name }}</a></h2>
 
+
+  <p>Category : {{ product.get_category_display }}</p>
+
   {% if product.is_featured %}
     <p><b>Featured</b></p>
   {% endif %}

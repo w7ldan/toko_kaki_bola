@@ -3,7 +3,9 @@
 <p><a href="{% url 'main:show_main' %}"><button>← Back to product List</button></a></p>
 
 <h1><b>{{ product.name }}</b></h1>
-<p>{{ product.get_category_display }}
+
+
+<p>Category : {{ product.get_category_display }}</p>
     
   {% if product.is_featured %}
   <p><b>Featured</b></p>
