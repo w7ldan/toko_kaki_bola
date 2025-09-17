@@ -113,3 +113,8 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response
+
+
+def clear_products(request):
+    Product.objects.all().delete()
+    return redirect("main:show_main")
