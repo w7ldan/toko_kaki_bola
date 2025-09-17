@@ -20,11 +20,12 @@ def show_main(request):
     else:
         product_list = Product.objects.filter(user=request.user)
 
+
     context = {
         'npm': '2406396590',
         'name': request.user.username,
         'class': 'PBP B',
-        'news_list': product_list,
+        'product_list': product_list,
         'last_login': request.COOKIES.get('last_login', 'Never')
     }
     return render(request, "main.html",context)
