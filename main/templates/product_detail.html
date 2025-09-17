@@ -19,10 +19,13 @@
 <img src="{{ product.thumbnail }}" alt="product thumbnail" width="300">
 <br /><br />
 
+{% endif %}
+
 {% if news.user %}
     <p>Author: {{ news.user.username }}</p>
 {% else %}
     <p>Author: Anonymous</p>
+
 {% endif %}
 
 
