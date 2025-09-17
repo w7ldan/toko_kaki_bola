@@ -29,6 +29,7 @@ def show_main(request):
     }
     return render(request, "main.html",context)
 
+##
 def create_product(request):
     form = ProductForm(request.POST or None)
 
