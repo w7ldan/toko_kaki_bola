@@ -1,5 +1,48 @@
 https://wildan-anshari-toko-kaki-bola.pbp.cs.ui.ac.id/
 
+Tugas 4:
+1. Adalah form user authentication (Login user) yang disediakan oleh django.
+Kelebihan :
+- Mudah untuk di setup dan gunakan
+- Terintegrasi dengan sistem authentication Django
+- Mengikuti standar security Django 
+
+Kekurangan
+- Tidak memiliki variasi lain, misalnya ingin login degan email, OAuth, dll.
+- Hanya mendukung login dengan username dan password secara default
+
+2. Authentication
+- Yaitu proses memverifikasi user
+Implementasi dilakukan dengan package django.contrib.auth.*, misalnya AuthenticationForm, authenticate(), login(), dll.
+
+Authorization
+- Yaitu proses memverifikasi kewenangan yang dimiliki oleh user setelah authentication
+ Implementasi dilakukan dengan permissions dan groups. Groups dapat memiliki permission tertentu sehingga membuat proses pengelompokkan dan otorisasi jadi lebih gampang. 
+
+ 3. - Cookies
+Kelebihan : Data tersimpan client - side sehingga tidak membebani server
+Kekurangan : Memiliki vulnerability, ukuran terbatas sehingga data tidak se-kompleks session dan dapat di modifikasi oleh user
+
+- Session
+Kelebihan : Data tersimpan server - side sehingga lebih aman dan dapat menyimpan data lebih kompleks
+Kekurangan : Karena disimpan server - side maka akan membebani server dan juga memerlukan session management
+
+4. Memiliki beberapa risiko potensial :
+- Bisa dicuri melalui XSS
+- Dapat terkena MiTM attack apabila tidak memakai HTTPS
+- Cookies dapat di modifikasi oleh client
+Penanganan Django :
+- Cookie session id di sign secara cryptographic
+- Dapat mencegah akses cookie dari JavaAScript apabila HttpOnly = True
+- Dapat mencegah MiTM apabila Secure=True
+- Menggunakan CSRF untuk mencegah cross site requests
+
+5. - Pertama saya mengimplementasikan beberapa function seperti Registrasi, Login dan Logout
+- Saya lalu memodifikasi beberapa views sehingga hanya dapat dilihat apabila sudah login. 
+- Setelah itu, saya mengimplementasikan cookies 
+- Terakhir saya menghubungkan model produk saya dengan user
+
+
 Tugas 3:
 1. Data delivery di perlukan sebagai proses pengiriman dan penerimaan data antara dua bagiany yang berbeda, yaitu frontend dan backend. Front end adalah tampilan yang dilihat pengguna di browser, sedangkan Backend adalah server yang menyimpan data, logika, dll.
 
