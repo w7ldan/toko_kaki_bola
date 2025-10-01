@@ -22,8 +22,8 @@ User dapat mengakses web anda dari device manapun, sehingga secara langsung dapa
 Dengan adanya responsive web design dapat improve pengalaman user ketika mengakses web. Sebuah design web statis akan susah untuk dinavigasi karena icon yang tidak sesuai dengan ukuran device
 - Efisiensi Biaya dan Waktu
 Daripada membuat web terpisah untuk mobile dan desktop, lebih baik untuk membuat satu website responsive.
-Contoh Aplikasi yang sudah : Scele
-Contoh Aplikasi yang belum : SiakNG
+Contoh Aplikasi yang sudah : Scele, Karena margin pada mobile menyesuaikan dengan ukuran layar mobile
+Contoh Aplikasi yang belum : SiakNG, Tidak ada penyesuaian antar device sehingga untuk membuka pada mobile harus di zoom dulu
 
 3. Misalkan sebuah foto 
 Margin: Adalah ruang di luar bingkai. Jarak antara elemen dengan elemen lainnya,
