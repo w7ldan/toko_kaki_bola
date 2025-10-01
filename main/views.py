@@ -117,3 +117,21 @@ def logout_user(request):
 def clear_products(request):
     Product.objects.all().delete()
     return redirect("main:show_main")
+
+def edit_product(request, product_name):
+    products = get_object_or_404(Product, name=product_name)
+    form = ProductForm(request.POST or None, instance=products)
+    if form.is_valid() and request.method == 'POST':
+        form.save()
+        return redirect('main:show_main')
+
+    context = {
+        'form': form
+    }
+
+    return render(request, "edit_product.html", context)
+
+def delete_product(request, product_name):
+    product = get_object_or_404(Product, name=product_name)
+    product.delete()
+    return HttpResponseRedirect(reverse('main:show_main'))

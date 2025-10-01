@@ -1,5 +1,67 @@
 https://wildan-anshari-toko-kaki-bola.pbp.cs.ui.ac.id/
 
+Tugas 5:
+1. Urutan Prioritas
+a ke d (tertinggi ke terendah),
+a. Inline Styles
+Selector yang memiliki atribut style dalam HTML. Adalah cara paling spesifik dan memiliki prioritas tertinggi
+b. ID Selector
+Selector yang memiliki atribut id dalam HTML. Sangat spesifik karena id adalah unik dalam satu halaman.
+c. Class, Attribute, dan Pseudo Class Selectors
+Class : Menargetkan elemen dengan atribut class tertentu, Contoh: ".button-primary"
+Attribute: Menargetkan elemen dengan attribute dan nilai spesifik, Contoh: "[type="submit"]"
+Pseudo-Class: Mengubah elemen dalam state tertentu, Contoh: ":hover"
+d. Elemen dan Pesudo-Class
+Elemen: Menargetkan semua elemen dengan tag HTML terentu, Contoh: p, div, h1
+Pseudo-element: Menargetkan bagian tertentu dari sebuah elemen, Contoh: "::before", "::after"
+
+2. Responsive Design Penting karena:
+- Versatility 
+User dapat mengakses web anda dari device manapun, sehingga secara langsung dapat memperbanyak pengunjung terhadap situs anda. Apabila design web statis, akan lebih susah untuk diakses device lain.
+- User Experience
+Dengan adanya responsive web design dapat improve pengalaman user ketika mengakses web. Sebuah design web statis akan susah untuk dinavigasi karena icon yang tidak sesuai dengan ukuran device
+- Efisiensi Biaya dan Waktu
+Daripada membuat web terpisah untuk mobile dan desktop, lebih baik untuk membuat satu website responsive.
+Contoh Aplikasi yang sudah : Scele
+Contoh Aplikasi yang belum : SiakNG
+
+3. Misalkan sebuah foto 
+Margin: Adalah ruang di luar bingkai. Jarak antara elemen dengan elemen lainnya,
+Border : Adalah bingkai dari foto itu sendiri. Garis yang mengelilingi padding dan konten.
+Padding : Ruang di dalam bingkai, 
+Implementasi :
+HTML :
+<div class="box">
+  Content
+</div>
+
+CSS:
+.box {
+  padding: 5px;
+
+  border: 5px solid black; 
+
+  margin: 30px; 
+
+  background-color: red;
+  width: 300px;
+}
+
+4. Flex-box dan Grid Layout
+Flex-box:
+Tata letak dalam satu dimensi. Hanya dapat mengatur posisi item horizontally atau vertically terpisah, tidak bersamaan.
+Kegunaan : 
+- Membuat Navigation bar
+- Aligning item
+- Ideal untuk komponen aplikasi dan tata letak skala kecil
+
+Grid Layout:
+Tata letak dua dimensi. Berarti dapat mengatur posisi item secara horizontally dan vertically bersamaan, seperti sebuah grid.
+Kegunaan:
+- Tata letak web secara keseluruhan 
+- Membuat tata letak yang kompleks yang memerlukan aligning di kedua sumbu 
+- Mengatur tata letak secara presisi
+
 Tugas 4:
 1. Adalah form user authentication (Login user) yang disediakan oleh django.
 Kelebihan :
