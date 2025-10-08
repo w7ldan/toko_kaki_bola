@@ -1,5 +1,48 @@
 https://wildan-anshari-toko-kaki-bola.pbp.cs.ui.ac.id/
 
+Tugas 6:
+1. Apa perbedaan antara synchronous request dan asynchronous request?
+
+Synchronous :
+Bekerja secara blocking. Ketika browser mengirim request, ia akan freeze lalu menunggu sampai server mengirim kembali sebuah respons penuh. Selama menunggu, pengunggu tidak dapat berinteraksi dengan halaman web sama sekali.
+Asynchronous:
+Bekerja secara non-blocking. Ketika browser mengirim request, ia akan melakukannya di background melalui JavaScript. Pengguna tetap dapat berinteraksi dengan server dan ketika respons dari server tiba, beberapa bagian tetentu akan diperbarui sesuai data yang di terima
+
+2. Bagaimana AJAX bekerja di Django (alur request–response)?
+
+- Pengguna melakukan sebuah aksi, misalnya mengklik tombol "Delete"
+- JavaScript menangkap aksi ini dan mencegah perilaku default browser (seperti reload halaman)
+- JavaScript mengirimkan request fetch ke sebuah URL spesifik di django. Request ini bakal disisipi CSRF token
+- Django menerima URL tersebut dan mencocokannya dengan view function yang sesuai
+- View mengeksekusi logika
+- View mengembalikan sebuah JsonResponse yang berisi status
+- JavaScript di browser menerima JsonResponse, jika statusnya success, JavaScript akan memanipulasi sesuai yang diminta
+
+3. Apa keuntungan menggunakan AJAX dibandingkan render biasa di Django?
+
+- UX yang lebih baik, interaksi terasa seamless karena tidak ada jeda akibat reload halaman penuh
+- Efisiensi Bandwith, Hanya data yang benar - benar dibutuhkan (JSON) yang dikirim antara server dan browser sehingga dapat menghemat data.
+-  Seperation of Concerns, Mendorong arsitektur dimana BackEnd berfungsi sebagai API yang menediakan data, sementara frontend fokus menampilkan data tersebut.
+
+4. Bagaimana cara memastikan keamanan saat menggunakan AJAX untuk fitur Login dan Register di Django?
+
+-  Gunakan CSRF Token
+- Selalu Gunakan HTTPS
+- Validasi server - side
+- Sanitasi Input
+
+5. Bagaimana AJAX mempengaruhi pengalaman pengguna (User Experience) pada website?
+
+- Interaksi yang seamless
+  Aksi seperti menghapus item dapat terjadi secara instan tanpa reload halaman
+- Instant feedback
+  Pengguna dapat melihat langsung hasil dari aksi mereka.
+- Mengurangi waiting time
+Karena data yang dimuat lebih kecil, aplikasi dapat terasa berjalan lebih cepat.
+- Membuat website terasa seperti aplikasi
+  Dengan menghilangkan siklus "klik-tunggu-reload", AJAX membuat website terasa lebih dinamis dan interaktif
+ 
+
 Tugas 5:
 1. Urutan Prioritas
 a ke d (tertinggi ke terendah),
