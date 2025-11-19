@@ -14,6 +14,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.utils.html import strip_tags
 import json
+import requests
 
 @login_required(login_url='/login')
 def show_main(request):
@@ -247,3 +248,84 @@ def login_ajax(request):
         else:
             return JsonResponse({'status': 'error', 'errors': form.errors.get_json_data()}, status=400)
     return JsonResponse({'status': 'error', 'message': 'Invalid request method'}, status=405)
+
+def proxy_image(request):
+    image_url = request.GET.get('url')
+    if not image_url:
+        return HttpResponse('No URL provided', status=400)
+    
+    try:
+        # Fetch image from external source
+        response = requests.get(image_url, timeout=10)
+        response.raise_for_status()
+        
+        # Return the image with proper content type
+        return HttpResponse(
+            response.content,
+            content_type=response.headers.get('Content-Type', 'image/jpeg')
+        )
+    except requests.RequestException as e:
+        return HttpResponse(f'Error fetching image: {str(e)}', status=500)
+    
+@login_required  
+def get_user_products(request):
+    user_products = Product.objects.filter(user=request.user)
+    
+    data = [
+        {
+            'id': product.id,
+            'name': product.name,
+            'description': product.description,
+            'price': product.price or 0, 
+            'category': product.category,
+            'thumbnail': product.thumbnail or '',
+            'created_at': product.created_at.isoformat(),
+            'is_featured': product.is_featured,
+            'username': product.user.username,  
+        }
+        for product in user_products
+    ]
+    
+    return JsonResponse(data, safe=False)
+
+@csrf_exempt
+@login_required 
+def create_product_flutter(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            
+            name = strip_tags(data.get("name", "")).strip()
+            description = strip_tags(data.get("description", "")).strip()
+            category = data.get("category", "")
+            thumbnail = data.get("thumbnail", "")
+            is_featured = data.get("is_featured", False)
+            
+            if not name:
+                return JsonResponse({"status": "error", "message": "Name is required"}, status=400)
+            
+            try:
+                price = int(data.get("price", 0))
+                if price <= 0:
+                    return JsonResponse({"status": "error", "message": "Price must be positive"}, status=400)
+            except (ValueError, TypeError):
+                return JsonResponse({"status": "error", "message": "Invalid price format"}, status=400)
+            
+            new_product = Product(
+                name=name,
+                description=description,
+                price=price,
+                category=category,
+                thumbnail=thumbnail,
+                is_featured=is_featured,
+                user=request.user,
+            )
+            new_product.save()
+            
+            return JsonResponse({"status": "success", "id": new_product.id}, status=201)
+            
+        except json.JSONDecodeError:
+            return JsonResponse({"status": "error", "message": "Invalid JSON"}, status=400)
+        
+    else:
+        return JsonResponse({"status": "error", "message": "Invalid request method"}, status=405)

@@ -25,6 +25,9 @@
         <a id="filter-my" class="bg-white text-gray-700 border border-gray-300 px-4 py-2 rounded-md font-medium transition-colors hover:bg-green-600 hover:text-white">
           My Products
         </a>
+        <a id="sort-harga" class="bg-white text-gray-700 border border-gray-300 px-4 py-2 rounded-md font-medium ">
+          Sort Price
+        </a>
         <button id="refresh-button" class="bg-white text-gray-700 border border-gray-300 p-2 rounded-md font-medium transition-colors hover:bg-gray-100" title="Refresh Products">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 110 2H4a1 1 0 01-1-1V4a1 1 0 011-1zm10 8a1 1 0 011-1v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 111.885-.666A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-2.566-11.601 1 1 0 11.666 1.885A5.002 5.002 0 0013 14.001V11z" clip-rule="evenodd" />
@@ -92,6 +95,7 @@ const emptyStateDisplay = document.getElementById('empty');
 const productGridContainer = document.getElementById('grid');
 const showAllProductsButton = document.getElementById('filter-all');
 const showMyProductsButton = document.getElementById('filter-my');
+const sortProductsPrice = document.getElementById('sort-harga');
 
 function getCookie(name) {
     let cookieValue = null;
@@ -188,6 +192,10 @@ function filterAndDisplayProducts() {
     }
 }
 
+function sortProducts(){
+
+}
+
 
 
 async function openEditModal(productName) {
@@ -231,6 +239,7 @@ function initializePage() {
 
     showAllProductsButton.addEventListener('click', () => { activeFilter = 'all'; filterAndDisplayProducts(); });
     showMyProductsButton.addEventListener('click', () => { activeFilter = 'my'; filterAndDisplayProducts(); });
+    sortProductsPrice.addEventListener('click', sortProducts());
     document.getElementById('refresh-button').addEventListener('click', fetchProductsFromServer);
 
     document.getElementById('productForm').addEventListener('submit', async function(e) {
